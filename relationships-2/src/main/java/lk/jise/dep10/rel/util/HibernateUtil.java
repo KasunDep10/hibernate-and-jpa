@@ -1,8 +1,6 @@
 package lk.jise.dep10.rel.util;
 
-import lk.jise.dep10.rel.entity.Actor;
-import lk.jise.dep10.rel.entity.ActorMovie;
-import lk.jise.dep10.rel.entity.Movie;
+import lk.jise.dep10.rel.entity.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -20,6 +18,7 @@ public class HibernateUtil {
 
         Metadata metadata = new MetadataSources(standardRegistry)
                 .addAnnotatedClasses(Actor.class, ActorMovie.class, Movie.class)
+                .addAnnotatedClasses(Student.class, Course.class, StudentCourse.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();
