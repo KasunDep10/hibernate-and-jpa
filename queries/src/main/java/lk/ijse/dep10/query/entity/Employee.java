@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "employee")
 @NamedNativeQuery(name = "searchEmployees", query = "SELECT * FROM employee WHERE name LIKE :q",
-        resultClass = Employee.class)
+         resultClass = Employee.class)
 public class Employee {
     @Id
     private String id;
